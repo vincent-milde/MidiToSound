@@ -20,3 +20,11 @@ else:
 
 if not available_ports:
     exit()
+
+def msgHandler ():
+    msg = midi_in.getMesssage() #Example for middle C : [144, 60, 127] ([channel, note, velocity]), 0.001413 (Timestamp) 
+    if msg:
+        data, timestamp = msg #splits the tuple
+        print(f"Msg: {data}, Timestamp: {timestamp}") #Debug
+        
+        
